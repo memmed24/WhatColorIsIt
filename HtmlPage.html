@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="JavaScript.js"></script>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <style>
+        body{
+            text-align:center;
+        }
+        p{
+            color:white;
+            font-size: 70px;
+            display:inline-block;
+            margin:0px;
+            letter-spacing: 10px;
+            margin-top: 200px;  
+        }
+        #code{
+            font-size: 40px;
+            color:white;
+        }
+    </style>
+    <p id="saat"></p>
+    <div id="code"></div>
+    <script>
+        function any() {
+            var date = new Date(),
+                hour = date.getHours(),
+                min = date.getMinutes(),
+                sec = date.getSeconds();
+                
+            if (min <= 9) {
+                min = '0' + min;
+            }
+            if (sec <= 9) {
+                sec = '0' + sec;
+            }
+
+                document.body.style.backgroundColor = "#" + hour + String(min) + sec;
+
+
+                document.getElementById("saat").innerHTML = hour + ":" + min + ":" + sec;
+                var a = document.getElementById("code").innerHTML = "#" + hour + min + sec;
+        }
+        any();
+        setInterval("any()", 1000);
+</script>
+</body>
+
+</html>
